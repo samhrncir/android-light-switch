@@ -24,7 +24,19 @@ over ADB. You do this once; it survives reboots (but not reinstalls).
 
 The app shows this command with a **Copy** button until the permission is granted.
 
-## Building
+## Installing on your phone
+
+Every push builds the app on GitHub Actions and publishes the APK under
+**Releases → Latest build** (also as a workflow artifact).
+
+1. On the phone, open the repository's Releases page and download `LightSwitch.apk`.
+2. Open the downloaded file. Allow installs from your browser if asked.
+3. Complete the ADB step above once.
+
+Builds are signed with the debug key in `app/debug.keystore`, so newer APKs
+install over older ones without uninstalling.
+
+## Building yourself
 
 Open the project in Android Studio (Ladybug or newer) and run it, or from the
 command line with the Android SDK installed:

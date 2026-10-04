@@ -11,5 +11,4 @@
 /app/release
 *.apk
 *.aab
-*.keystore
 *.jks
