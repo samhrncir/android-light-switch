@@ -1,0 +1,49 @@
+# Light Switch
+
+An Android app that flips your phone between the system **light** and **dark**
+theme with a wall light switch. Lever up = lights on (light theme), lever down =
+lights off (dark theme). Tap it, drag it, or flick it.
+
+Built with Kotlin and Jetpack Compose. Requires Android 10 (API 29) or newer,
+which is when Android gained a system-wide dark theme.
+
+## One-time setup
+
+Android does not let ordinary apps change the system theme. The app needs the
+`WRITE_SECURE_SETTINGS` permission, which can only be granted from a computer
+over ADB. You do this once; it survives reboots (but not reinstalls).
+
+1. Enable **Developer options** and **USB debugging** on the phone.
+2. Install the app, connect the phone, and run:
+
+   ```sh
+   adb shell pm grant com.samhrncir.lightswitch android.permission.WRITE_SECURE_SETTINGS
+   ```
+
+3. Reopen the app. The setup card disappears and the switch works.
+
+The app shows this command with a **Copy** button until the permission is granted.
+
+## Building
+
+Open the project in Android Studio (Ladybug or newer) and run it, or from the
+command line with the Android SDK installed:
+
+```sh
+./gradlew :app:installDebug
+```
+
+## How it works
+
+- `ThemeController` writes the secure setting `ui_night_mode` (1 = light,
+  2 = dark). Android's UI mode service only re-reads that setting when leaving
+  car mode, so the app enters and immediately exits car mode to apply the change
+  at once. This is the same technique automation apps use. You may notice the
+  car-mode notification flash for a split second.
+- On builds that do not lock day/night mode (for example Android Automotive),
+  `UiModeManager.setNightMode` works directly and is tried first.
+- `LightSwitch` is a Canvas-drawn composable. It animates the lever as soon as
+  you interact, asks the controller to change the theme, and springs back if the
+  system never confirms the change.
+- `MainActivity` handles `uiMode` configuration changes itself so the switch
+  animation is not interrupted when the theme flips.

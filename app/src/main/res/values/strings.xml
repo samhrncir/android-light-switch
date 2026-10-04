@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Light Switch</string>
+
+    <string name="status_light">Lights on · Light theme</string>
+    <string name="status_dark">Lights off · Dark theme</string>
+    <string name="hint">Tap or flip the switch</string>
+
+    <string name="setup_title">One-time setup needed</string>
+    <string name="setup_body">Android only lets apps change the system theme after you grant WRITE_SECURE_SETTINGS over ADB. Enable USB debugging, connect your phone, and run this once:</string>
+    <string name="setup_command">adb shell pm grant com.samhrncir.lightswitch android.permission.WRITE_SECURE_SETTINGS</string>
+    <string name="setup_copy">Copy command</string>
+    <string name="setup_copied">Command copied</string>
+    <string name="setup_open_settings">Open display settings</string>
+    <string name="setup_done_hint">Come back to this app afterwards; the card disappears once the permission is granted.</string>
+
+    <string name="error_no_permission">Couldn\'t change the theme. Grant the permission below first.</string>
+    <string name="error_failed">Couldn\'t change the theme on this device.</string>
+
+    <string name="a11y_switch">Theme light switch</string>
+    <string name="a11y_state_on">On, light theme</string>
+    <string name="a11y_state_off">Off, dark theme</string>
+</resources>

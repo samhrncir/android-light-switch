@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Wall plate -->
+    <path
+        android:fillColor="#F7F1E4"
+        android:pathData="M36,24 h36 a4,4 0 0 1 4,4 v52 a4,4 0 0 1 -4,4 h-36 a4,4 0 0 1 -4,-4 v-52 a4,4 0 0 1 4,-4 z" />
+    <!-- Screws -->
+    <path
+        android:fillColor="#B9B1A3"
+        android:pathData="M54,27.5 a2.2,2.2 0 1 0 0.01,0 z M54,80.5 a2.2,2.2 0 1 0 0.01,0 z" />
+    <!-- Recess -->
+    <path
+        android:fillColor="#2E2A26"
+        android:pathData="M46,38 h16 a2,2 0 0 1 2,2 v28 a2,2 0 0 1 -2,2 h-16 a2,2 0 0 1 -2,-2 v-28 a2,2 0 0 1 2,-2 z" />
+    <!-- Lever (flipped up) -->
+    <path
+        android:fillColor="#8A8378"
+        android:pathData="M47.5,46 h13 a2,2 0 0 1 2,2 v14 a2,2 0 0 1 -2,2 h-13 a2,2 0 0 1 -2,-2 v-14 a2,2 0 0 1 2,-2 z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M47.5,41 h13 a2,2 0 0 1 2,2 v14 a2,2 0 0 1 -2,2 h-13 a2,2 0 0 1 -2,-2 v-14 a2,2 0 0 1 2,-2 z" />
+    <!-- Indicator light -->
+    <path
+        android:fillColor="#FFB84D"
+        android:pathData="M54,44.5 a1.6,1.6 0 1 0 0.01,0 z" />
+</vector>
