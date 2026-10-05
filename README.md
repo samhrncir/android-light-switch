@@ -10,11 +10,22 @@ which is when Android gained a system-wide dark theme.
 ## One-time setup
 
 Android does not let ordinary apps change the system theme. The app needs the
-`WRITE_SECURE_SETTINGS` permission, which can only be granted from a computer
-over ADB. You do this once; it survives reboots (but not reinstalls).
+`WRITE_SECURE_SETTINGS` permission, which only a shell (ADB) can grant. You do
+this once; it survives reboots and app updates (but not an uninstall).
+
+### Option A: from the phone, no computer (Android 11+)
+
+1. Install [Shizuku](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api)
+   from Google Play and open it.
+2. Tap **Start via Wireless debugging** and follow Shizuku's on-screen steps
+   (turn on Developer options, enable Wireless debugging, pair, start).
+3. Open Light Switch and tap **Grant permission** on the setup card. Approve the
+   Shizuku prompt. Done; the switch works and Shizuku is no longer needed.
+
+### Option B: from a computer
 
 1. Enable **Developer options** and **USB debugging** on the phone.
-2. Install the app, connect the phone, and run:
+2. Connect the phone and run in a terminal:
 
    ```sh
    adb shell pm grant com.samhrncir.lightswitch android.permission.WRITE_SECURE_SETTINGS
@@ -22,7 +33,8 @@ over ADB. You do this once; it survives reboots (but not reinstalls).
 
 3. Reopen the app. The setup card disappears and the switch works.
 
-The app shows this command with a **Copy** button until the permission is granted.
+The app shows both options, with a **Copy** button for the command, until the
+permission is granted.
 
 ## Installing on your phone
 
@@ -57,5 +69,7 @@ command line with the Android SDK installed:
 - `LightSwitch` is a Canvas-drawn composable. It animates the lever as soon as
   you interact, asks the controller to change the theme, and springs back if the
   system never confirms the change.
+- `ShizukuHelper` asks Shizuku, when the user has started it, to run
+  `pm grant` for this app so the permission can be granted from the phone itself.
 - `MainActivity` handles `uiMode` configuration changes itself so the switch
   animation is not interrupted when the theme flips.

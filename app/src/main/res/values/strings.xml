@@ -7,7 +7,21 @@
     <string name="hint">Tap or flip the switch</string>
 
     <string name="setup_title">One-time setup needed</string>
-    <string name="setup_body">Android only lets apps change the system theme after you grant WRITE_SECURE_SETTINGS over ADB. Enable USB debugging, connect your phone, and run this once:</string>
+    <string name="setup_body">Android only lets an app change the system theme after it has been granted WRITE_SECURE_SETTINGS. Do this once, either way below, and it sticks.</string>
+
+    <string name="setup_shizuku_heading">From this phone (Android 11+)</string>
+    <string name="setup_shizuku_body">Install the free Shizuku app, open it, tap “Start via Wireless debugging” and follow its steps. Then come back here and tap the button.</string>
+    <string name="setup_shizuku_install">Get Shizuku</string>
+    <string name="setup_shizuku_open">Open Shizuku</string>
+    <string name="setup_shizuku_allow">Allow in Shizuku</string>
+    <string name="setup_shizuku_grant">Grant permission</string>
+    <string name="setup_shizuku_not_running">Shizuku isn\'t running. Open it and tap Start.</string>
+    <string name="setup_shizuku_denied">Shizuku access was denied.</string>
+    <string name="setup_shizuku_failed">Shizuku couldn\'t grant the permission: %1$s</string>
+    <string name="setup_granted">Permission granted. Flip the switch!</string>
+
+    <string name="setup_adb_heading">From a computer</string>
+    <string name="setup_adb_body">Enable USB debugging, connect the phone, and run this in a terminal:</string>
     <string name="setup_command">adb shell pm grant com.samhrncir.lightswitch android.permission.WRITE_SECURE_SETTINGS</string>
     <string name="setup_copy">Copy command</string>
     <string name="setup_copied">Command copied</string>
