@@ -7,6 +7,13 @@ lights off (dark theme). Tap it, drag it, or flick it.
 Built with Kotlin and Jetpack Compose. Requires Android 10 (API 29) or newer,
 which is when Android gained a system-wide dark theme.
 
+## Home screen widget
+
+Long-press your home screen, choose Widgets, and add **Light Switch**. The
+widget is a tap-to-flip switch: lever up means light theme, lever down means
+dark. It follows the system theme, and before the one-time setup below is done
+a tap opens the app instead.
+
 ## One-time setup
 
 Android does not let ordinary apps change the system theme. The app needs the

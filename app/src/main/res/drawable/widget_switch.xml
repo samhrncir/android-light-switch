@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="108dp"
+    android:viewportWidth="72"
+    android:viewportHeight="108">
+    <!-- Plate shadow -->
+    <path
+        android:fillColor="#33000000"
+        android:pathData="M10,6 h52 a6,6 0 0 1 6,6 v88 a6,6 0 0 1 -6,6 h-52 a6,6 0 0 1 -6,-6 v-88 a6,6 0 0 1 6,-6 z" />
+    <!-- Plate -->
+    <path
+        android:fillColor="#F7F1E4"
+        android:strokeColor="#D9D0BE"
+        android:strokeWidth="1"
+        android:pathData="M10,4 h52 a6,6 0 0 1 6,6 v88 a6,6 0 0 1 -6,6 h-52 a6,6 0 0 1 -6,-6 v-88 a6,6 0 0 1 6,-6 z" />
+    <!-- Screws -->
+    <path
+        android:fillColor="#B9B1A3"
+        android:pathData="M36,12 m-2.5,0 a2.5,2.5 0 1 0 5,0 a2.5,2.5 0 1 0 -5,0 z M36,96 m-2.5,0 a2.5,2.5 0 1 0 5,0 a2.5,2.5 0 1 0 -5,0 z" />
+    <!-- Recess -->
+    <path
+        android:fillColor="#2E2A26"
+        android:pathData="M25,30 h22 a3,3 0 0 1 3,3 v42 a3,3 0 0 1 -3,3 h-22 a3,3 0 0 1 -3,-3 v-42 a3,3 0 0 1 3,-3 z" />
+    <!-- Lever side (visible below the face when the lever is up) -->
+    <path
+        android:fillColor="#8A8378"
+        android:pathData="M29,39 h14 a3,3 0 0 1 3,3 v18 a3,3 0 0 1 -3,3 h-14 a3,3 0 0 1 -3,-3 v-18 a3,3 0 0 1 3,-3 z" />
+    <!-- Lever face -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M29,36 h14 a3,3 0 0 1 3,3 v18 a3,3 0 0 1 -3,3 h-14 a3,3 0 0 1 -3,-3 v-18 a3,3 0 0 1 3,-3 z" />
+    <!-- Indicator lamp, lit -->
+    <path
+        android:fillColor="#FFB84D"
+        android:pathData="M36,41 m-1.8,0 a1.8,1.8 0 1 0 3.6,0 a1.8,1.8 0 1 0 -3.6,0 z" />
+</vector>

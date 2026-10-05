@@ -36,6 +36,8 @@
     <string name="error_no_permission">Couldn\'t change the theme. Grant the permission below first.</string>
     <string name="error_failed">Couldn\'t change the theme on this device.</string>
 
+    <string name="widget_description">Tap to flip your phone between light and dark theme.</string>
+
     <string name="a11y_switch">Theme light switch</string>
     <string name="a11y_state_on">On, light theme</string>
     <string name="a11y_state_off">Off, dark theme</string>

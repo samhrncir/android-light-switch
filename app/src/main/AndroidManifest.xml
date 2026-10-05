@@ -39,6 +39,19 @@
             </intent-filter>
         </activity>
 
+        <!-- Home screen widget: tap to flip the theme. -->
+        <receiver
+            android:name=".widget.LightSwitchWidget"
+            android:exported="false"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_light_switch_info" />
+        </receiver>
+
         <!-- Receives the Shizuku binder so the app can run `pm grant` on itself. -->
         <provider
             android:name="rikka.shizuku.ShizukuProvider"

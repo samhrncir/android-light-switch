@@ -34,6 +34,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -56,6 +57,7 @@ import androidx.lifecycle.compose.LifecycleEventEffect
 import com.samhrncir.lightswitch.R
 import com.samhrncir.lightswitch.ShizukuHelper
 import com.samhrncir.lightswitch.ThemeController
+import com.samhrncir.lightswitch.widget.LightSwitchWidget
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -81,6 +83,10 @@ fun LightSwitchScreen(isDark: Boolean) {
     // The permission may be granted from outside the app (ADB); re-check whenever we come back.
     LifecycleEventEffect(Lifecycle.Event.ON_RESUME) {
         hasPermission = ThemeController.hasWriteSecureSettings(context)
+    }
+    // Home screen widgets behave differently with and without the permission.
+    LaunchedEffect(hasPermission) {
+        LightSwitchWidget.updateAll(context)
     }
 
     val errorNoPermission = stringResource(R.string.error_no_permission)
