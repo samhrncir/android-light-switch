@@ -39,6 +39,11 @@ object ShizukuHelper {
         return if (granted) State.READY else State.NEEDS_PERMISSION
     }
 
+    /** Shizuku server version, or null when it is not running. */
+    fun version(): Int? = runCatching {
+        if (Shizuku.pingBinder()) Shizuku.getVersion() else null
+    }.getOrNull()
+
     /** Opens Shizuku if installed, otherwise its Play Store page. */
     fun openShizuku(context: Context) {
         val launch = context.packageManager.getLaunchIntentForPackage(SHIZUKU_PACKAGE)

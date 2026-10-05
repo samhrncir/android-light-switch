@@ -19,6 +19,11 @@
     <string name="setup_shizuku_denied">Shizuku access was denied.</string>
     <string name="setup_shizuku_failed">Shizuku couldn\'t grant the permission: %1$s</string>
     <string name="setup_granted">Permission granted. Flip the switch!</string>
+    <string name="setup_status_not_installed">Status: Shizuku is not installed.</string>
+    <string name="setup_status_not_running">Status: Shizuku is installed but its service is not running. Open Shizuku and tap Start, then come back.</string>
+    <string name="setup_status_needs_permission">Status: Shizuku v%1$d is running. Tap the button and allow Light Switch.</string>
+    <string name="setup_status_ready">Status: Shizuku v%1$d is running and Light Switch is allowed.</string>
+    <string name="setup_app_version">Light Switch %1$s</string>
 
     <string name="setup_adb_heading">From a computer</string>
     <string name="setup_adb_body">Enable USB debugging, connect the phone, and run this in a terminal:</string>

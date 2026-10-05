@@ -281,6 +281,19 @@ private fun SetupCard(
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
+            Spacer(Modifier.height(8.dp))
+            Text(
+                text = when (shizukuState) {
+                    ShizukuHelper.State.NOT_INSTALLED -> stringResource(R.string.setup_status_not_installed)
+                    ShizukuHelper.State.NOT_RUNNING -> stringResource(R.string.setup_status_not_running)
+                    ShizukuHelper.State.NEEDS_PERMISSION ->
+                        stringResource(R.string.setup_status_needs_permission, ShizukuHelper.version() ?: 0)
+                    ShizukuHelper.State.READY ->
+                        stringResource(R.string.setup_status_ready, ShizukuHelper.version() ?: 0)
+                },
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.primary,
+            )
             Spacer(Modifier.height(12.dp))
             Button(
                 modifier = Modifier.fillMaxWidth(),
@@ -372,6 +385,19 @@ private fun SetupCard(
                 text = stringResource(R.string.setup_done_hint),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            Spacer(Modifier.height(12.dp))
+            val versionName = remember {
+                runCatching {
+                    context.packageManager.getPackageInfo(context.packageName, 0).versionName
+                }.getOrNull() ?: "?"
+            }
+            Text(
+                text = stringResource(R.string.setup_app_version, versionName),
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.fillMaxWidth(),
+                textAlign = TextAlign.End,
             )
         }
     }
